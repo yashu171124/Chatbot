@@ -41,7 +41,7 @@ function App() {
     try {
       const { data } = await axios.post('http://localhost:8080/chat', {
         prompt: input,
-        session_id: "suhash_master"
+        session_id: "yash_master"
       });
       setHistory(prev => [...prev, { role: 'maya', content: data.response, source: data.source }]);
       speak(data.response);
@@ -57,7 +57,7 @@ function App() {
       </div>
 
       <main className="main-chat">
-        <header className="header">MAYA • LIVE AGENT</header>
+        <header className="header">JAFFER • LIVE AGENT</header>
         <div className="chat-window" ref={scrollRef}>
           {history.length === 0 ? (
             <div className="welcome-screen">
@@ -66,7 +66,7 @@ function App() {
             </div>
           ) : (
             history.map((msg, i) => (
-              <div key={i} className={`message ${msg.role === 'user' ? 'user-msg' : 'maya-msg'}`}>
+              <div key={i} className={`message ${msg.role === 'user' ? 'user-msg' : 'jaffer-msg'}`}>
                 <div className={`bubble ${msg.role === 'user' ? 'user-bubble' : 'maya-bubble'}`}>
                   {msg.content}
                   {msg.source && <div className="source-tag">📡 {msg.source}</div>}
@@ -80,7 +80,7 @@ function App() {
         <div className="input-area">
           <div className="input-pill">
             <button className={`icon-btn ${isListening ? 'active-mic' : ''}`} onClick={() => { setIsListening(true); recognitionRef.current.start(); }}>🎤</button>
-            <input placeholder="Ask Maya anything..." value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendMessage()} />
+            <input placeholder="Ask Jaffer anything..." value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendMessage()} />
             <button className="send-btn" onClick={sendMessage}>Send</button>
           </div>
         </div>
