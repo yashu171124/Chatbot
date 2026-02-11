@@ -35,8 +35,8 @@ def init_db():
     cursor = conn.cursor()
     cursor.execute('CREATE TABLE IF NOT EXISTS profile (key TEXT PRIMARY KEY, value TEXT)')
     cursor.execute('CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY AUTOINCREMENT, role TEXT, content TEXT)')
-    cursor.execute("INSERT OR IGNORE INTO profile (key, value) VALUES ('name', 'Suhash')")
-    cursor.execute("INSERT OR IGNORE INTO profile (key, value) VALUES ('role', 'Lead Developer @ Maya Agentic')")
+    cursor.execute("INSERT OR IGNORE INTO profile (key, value) VALUES ('name', 'Yash')")
+    cursor.execute("INSERT OR IGNORE INTO profile (key, value) VALUES ('role', 'Lead Developer @ Jaffer Agentic')")
     cursor.execute("INSERT OR IGNORE INTO profile (key, value) VALUES ('tech', 'C++, React, FastAPI, Ollama')")
     conn.commit()
     conn.close()
@@ -108,7 +108,7 @@ async def chat(input_data: ChatInput):
     user_name = result[0] if result else "User"
 
     system_prompt = f"""
-    ROLE: You are Maya, a live-data agent. 
+    ROLE: You are Jaffer, a live-data agent. 
     DATE: Tuesday, February 10, 2026.
     
     DATA_FEED:
